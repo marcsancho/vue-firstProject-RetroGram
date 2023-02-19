@@ -1,20 +1,20 @@
 <template>
   <div class="container px-4 py-5">
     <h1 class="pb-2 border-bottom border-secondary text-light">Crear Tematica</h1>
-    <form class="form" @submit.prevent="modificarTematica">
+    <form class="form">
       <div class="form-group">
         <label for="Titulo" class="form-label text-light mx-3">Titulo de la tematica</label>
-        <input type="text" name="titulo" class="form-control mx-3" placeholder="Nombre de la Tematica" required>
+        <input type="text" v-model="titulo" class="form-control mx-3" placeholder="Nombre de la Tematica" required>
       </div>
       <div class="form-group">
         <label for="Descripcion" class="form-label text-light mx-3">Descripcion de la tematica</label>
-        <input type="text" name="descripcion" class="form-control mx-3" placeholder="Descripcion de la Tematica" required>
+        <input type="text" v-model="descripcion" class="form-control mx-3" placeholder="Descripcion de la Tematica" required>
       </div>
       <div class="form-group">
         <label for="Coleccion" class="form-label text-light mx-3">Busca o cambia la id de una coleccion (esta la obtendras en unsplash.com)</label>
-        <input type="text" name="coleccion" class="form-control mx-3" placeholder="Id de la Coleccion de unsplash">
+        <input type="text" v-model="coleccion" class="form-control mx-3" placeholder="Id de la Coleccion de unsplash">
       </div>
-      <button type="button" class="btn btn-primary m-3">Enviar</button>
+      <button type="button" @click="modificarTematica" class="btn btn-primary m-3">Enviar</button>
     </form>
   </div>
 </template>
@@ -30,7 +30,6 @@ export default {
       descripcion: "",
       coleccion: "",
       tematicas: [],
-      tematica: [],
       imagen: [],
     }
   },
@@ -40,21 +39,22 @@ export default {
 
   },
   methods: {
-    async modificarTematica(submitEvent){
-      this.titulo = submitEvent.target.elements.titulo.value
-      this.descripcion = submitEvent.target.elements.descripcion.value
-      this.coleccion = submitEvent.target.elements.coleccion.value
-      console.log('Estoy dentro del metodo')
+    async modificarTematica(){
       for (let i = 0; i < this.tematicas.length; i++){
-        console.log('Estoy dentro de el for')
-        console.log(titulo)
-        if (titulo == this.tematicas[i].titulo){
-          console.log('Estoy dentro de el if')
-          await axios.patch('https://localhost:3000/tematica/' + this.tematicas[i].id, {
-            descripcion: descripcion
+        if (this.titulo == this.tematicas[i].titulo){
+          await axios.patch('http://localhost:3000/tematica/' + this.tematicas[i].id, {
+            descripcion: this.descripcion
           });
-          console.log('He hecho el patch')
-        } else {
+        } else if (this.coleccion == ""){
+          this.imagen = await this.$unsplash.random(1, 'landscape');
+          this.imagen = this.imagen.id;
+          console.log(this.imagen)
+          await axios.post('http://localhost:3000/tematica/', {
+            titulo: this.titulo,
+            descripcion: this.descripcion,
+            imagenPortada: this.imagen,
+            coleccion: "2183133",
+          })
 
         }
       }

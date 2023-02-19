@@ -6,6 +6,8 @@
       <img class="card-img mw-75 " :src="this.array.urls.full">
     </div>
   </div>
+  <a id="botonModificar" type="button"  class="btn btn-primary my-2">Editar tematica</a>
+  <a type="button" @click="eliminarPost" class="btn btn-secondary my-2 ">Eliminar tematica</a>
 </template>
 
 <script>
@@ -14,9 +16,15 @@ export default {
   name: "Post",
   data() {
     return {
+      postId: this.$route.params.post,
       postDesc: this.$route.params.postDesc,
       postImg: this.$route.params.postImg,
       array: [],
+    }
+  },
+  methods: {
+    async eliminarPost(){
+      await axios.delete('http://localhost:3000/posts/' + this.postId);
     }
   },
   async created() {

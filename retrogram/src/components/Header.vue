@@ -11,11 +11,6 @@
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
           <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
         </form>
-
-        <div class="text-end">
-          <button type="button" class="btn btn-secondary me-2">Login</button>
-          <button type="button" class="btn btn-secondary">Sign-up</button>
-        </div>
       </div>
     </div>
 
