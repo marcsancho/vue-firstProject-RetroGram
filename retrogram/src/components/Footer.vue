@@ -8,7 +8,7 @@
         <a
             class="btn text-white btn-floating m-1"
             style="background-color: #3b5998;"
-            href="#!"
+            href="https://facebook.com"
             role="button"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
@@ -20,7 +20,7 @@
         <a
             class="btn text-white btn-floating m-1"
             style="background-color: #55acee;"
-            href="#!"
+            href="https://twitter.com"
             role="button"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
@@ -28,13 +28,11 @@
           </svg>
         </a>
 
-        <!-- Google -->
-
         <!-- Instagram -->
         <a
             class="btn text-white btn-floating m-1"
             style="background-color: #ac2bac;"
-            href="#!"
+            href="https://instagram.com"
             role="button"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
@@ -42,13 +40,11 @@
           </svg>
         </a>
 
-        <!-- Linkedin -->
-
         <!-- Github -->
         <a
             class="btn text-white btn-floating m-1"
             style="background-color: #333333;"
-            href="#!"
+            href="https://github.com"
             role="button"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
@@ -63,7 +59,7 @@
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
       © 2020 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      <a class="text-white" href="#!">RetroGram.com</a>
     </div>
     <!-- Copyright -->
   </footer>
@@ -76,5 +72,8 @@ export default {
 </script>
 
 <style scoped>
-
+ a{
+   margin-right: 1em !important;
+   margin-left: 1em !important;
+ }
 </style>

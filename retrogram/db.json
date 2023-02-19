@@ -1,0 +1,69 @@
+{
+  "tematica": [
+    {
+      "id": 0,
+      "imagenPortada": "c4cWawGBFv8",
+      "coleccion": "9400169",
+      "titulo": "Amaneceres",
+      "descripcion": "En esta pagina encontraras posts de atardeceres"
+    },
+    {
+      "id": 1,
+      "imagenPortada": "c4cWawGBFv8",
+      "coleccion": "9400169",
+      "titulo": "Montañas",
+      "descripcion": "En esta pagina encontraras posts de montañas"
+    },
+    {
+      "id": 2,
+      "imagenPortada": "AwOG1tC5buE",
+      "coleccion": "2183133",
+      "titulo": "Home",
+      "descripcion": "daskhgkjasldj"
+    }
+  ],
+  "posts": [
+    {
+      "id": 0,
+      "img": "odxB5oIG_iA",
+      "descripcion": "Amanecer en la playa de Palma con mi amigo y diferentes tonalidades en el cielo.",
+      "tematicaId": "0"
+    },
+    {
+      "id": 1,
+      "img": "odxB5oIG_iA",
+      "descripcion": "Atardecer test",
+      "tematicaId": "0"
+    },
+    {
+      "id": 2,
+      "img": "odxB5oIG_iA",
+      "descripcion": "Atardecer test",
+      "tematicaId": "1"
+    },
+    {
+      "id": 3,
+      "img": "a0BEHFMKqTE",
+      "descripcion": "asdf",
+      "tematicaId": "2"
+    },
+    {
+      "id": 4,
+      "img": "odxB5oIG_iA",
+      "descripcion": "Amanecer en la playa de Palma con mi amigo y diferentes tonalidades en el cielo.",
+      "tematicaId": "1"
+    },
+    {
+      "img": "ulG2K7id26s",
+      "descripcion": "hola",
+      "tematicaId": 0,
+      "id": 5
+    },
+    {
+      "img": "ulG2K7id26s",
+      "descripcion": "Hola",
+      "tematicaId": 0,
+      "id": 6
+    }
+  ]
+}

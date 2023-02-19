@@ -1,8 +1,9 @@
+
 <template>
-  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="true">
-    <div class="carousel-inner">
-      <div v-for="slide in this.array" :key="slide.id" v-bind:class="(slide.id == array[0].id)?'carousel-item active':'carousel-item'">
-        <img :src="slide.urls.regular" class="d-block w-100" alt="hola">
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div  class="carousel-inner" v-for="item in this.array" :key="item.id">
+      <div v-bind:class="item.id == this.array[0].id?'carousel-item active':'carousel-item'">
+        <img :src="item.urls.regular" class="d-block w-100" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -20,18 +21,23 @@
 export default {
   name: "Carousel",
   data() {
-    return{
+    return {
       array: [],
     }
   },
-  async created() {
-    try {
-      const promise = await this.$unsplash.random(3, 'landscape');
-      console.log(promise);
-      this.array = promise;
-    } catch (error) {
-      console.log(error);
+  methods: {
+    async getImagenes() {
+      try {
+        const promise = await this.$unsplash.random(3, 'landscape');
+        console.log(promise);
+        this.array = promise;
+      } catch (error) {
+        console.log(error);
+      }
     }
+  },
+  created() {
+    this.getImagenes()
   }
 }
 </script>
